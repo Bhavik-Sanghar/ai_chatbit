@@ -4,45 +4,16 @@ from app.services.chat_service import ChatService
 def main():
     chat_service = ChatService()
 
-    # ─────────────────────────
-    # Session A
-    # ─────────────────────────
+    chat = chat_service.create_chat()
 
-    print("\n--- SESSION A ---")
+    print(f"Created chat: {chat.session_id}")
 
-    print(
-        chat_service.chat(
-            "session-A",
-            "My favorite programming language is Python."
-        )
+    response = chat_service.chat(
+        session_id=chat.session_id,
+        question="What is Python?",
     )
 
-    print(
-        chat_service.chat(
-            "session-A",
-            "What is my favorite programming language?"
-        )
-    )
-
-    # ─────────────────────────
-    # Session B
-    # ─────────────────────────
-
-    print("\n--- SESSION B ---")
-
-    print(
-        chat_service.chat(
-            "session-B",
-            "My favorite programming language is JavaScript."
-        )
-    )
-
-    print(
-        chat_service.chat(
-            "session-B",
-            "What is my favorite programming language?"
-        )
-    )
+    print(response)
 
 
 if __name__ == "__main__":

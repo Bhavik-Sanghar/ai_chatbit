@@ -2,12 +2,12 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_mistralai import ChatMistralAI
 
 from app.config.settings import (
+    BACKUP_MODEL,
     GOOGLE_API_KEY,
+    MAX_RETRIES,
     MISTRAL_API_KEY,
     PRIMARY_MODEL,
-    BACKUP_MODEL,
     TEMPERATURE,
-    MAX_RETRIES
 )
 
 
